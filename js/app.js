@@ -14,7 +14,10 @@ function app() {
 
 
 	var Body = React.createClass({
+
 	  render:function () {
+
+
 
 		return(
 		  <div>
@@ -36,14 +39,14 @@ function app() {
 		  var second = document.querySelector('#second')
 
 		  var time = (minute.value*60) + parseInt(second.value)
-  		  alert(time)
+  		  this.timer = time
 	    },
 
 	    render: function() {
 	        return (
-	            <div id='startButton'>
-	                <input type="submit" value="Start" onClick={this.onClick} />
-	                { this.state.showResults ? <GameBox /> : null }
+	            <div>
+	                <input id='startButton' type="submit" value="Start" onClick={this.onClick} />
+	                { this.state.showResults ? <GameBox time={this.timer}/> : null }
 	            </div>
 	        );
 	    }
@@ -51,15 +54,6 @@ function app() {
 
 
 	var TimeBox = React.createClass({
-		
-		_start: function(){
-		  var minute = document.querySelector('#minute')
-		  var second = document.querySelector('#second')
-
-		  var time = (minute.value*60) + parseInt(second.value)
-  		  alert(time)
-  		  
-		},
 
 		render:function () {
 		  return(
@@ -86,31 +80,53 @@ function app() {
 		_win:0,
 		_loss:0,
 		_draw:0,
+		_challenge:function(evt){
+			console.log(evt.target.value)
+		},
+
+		countdown:function(){
+			console.log(this)
+			var self = this
+			var time=self.props.time
+			if(time>= 0){
+				 self.props.time -= 1
+				setTimeout(self.countdown,1000)
+			}
+			else {
+				alert('time is up')
+			}
+		},
 
 		render:function(){
 		  return(
 
-
-		    <div id='score'>
+		    <div id='gameSpace'>
+		      <div>
+		        <h3>{this.props.time}</h3>
+		      </div>
 
 		      <h3 className='results' >Win:{this._win}</h3>
 		      <h3 className='results' >Loss:{this._loss}</h3>
 		      <h3 className='results' >Draw:{this._draw}</h3>
 
 		      <div>
-		        <div className='icons'>
-		          <img src='http://megaicons.net/static/img/icons_sizes/8/178/512/rock-paper-scissors-rock-icon.png' />
-		        </div>
+		        
+		        <h3 id='instruction'>Click wisely:</h3>
 
-		        <div className='icons'>
-		          <img src='http://megaicons.net/static/img/icons_sizes/8/178/256/rock-paper-scissors-scissors-icon.png' />
-		        </div>
+		        <button className='icons' value='rock' onClick={this._challenge}>
+		          <img value='rock' src='http://megaicons.net/static/img/icons_sizes/8/178/512/rock-paper-scissors-rock-icon.png' />
+		        </button>
 
-		        <div className='icons'>
-		          <img src='http://www.veryicon.com/icon/ico/System/Icons8%20Metro%20Style/Rock%20Paper%20Scissors%20Paper.ico' />
-		        </div>
+		        <button className='icons' value='scissors' onClick={this._challenge}>
+		          <img value='scissors' src='http://megaicons.net/static/img/icons_sizes/8/178/256/rock-paper-scissors-scissors-icon.png' />
+		        </button>
+
+		        <button className='icons' value='paper' onClick={this._challenge}>
+		          <img value='paper' src='http://www.veryicon.com/icon/ico/System/Icons8%20Metro%20Style/Rock%20Paper%20Scissors%20Paper.ico' />
+		        </button>
 		      </div>
 
+		      <h3> VS </h3>
 
 
 		    </div>
