@@ -127,3 +127,26 @@ body {
  * App code
  */
 
+ body{
+    .icons{
+        height:100px;
+        width: 100px;
+        display:inline-block;
+        margin-left: 10%;
+    }
+    .results{
+        display:inline-block;
+        margin-left: 10%;
+
+    }
+    #title{
+        text-align: center;
+    }
+    #timeBar{
+        text-align: center;
+    }
+    #startButton{
+        padding: 0 auto;
+    }
+ }
+
