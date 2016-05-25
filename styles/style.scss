@@ -129,6 +129,11 @@ body {
 
  body{
     
+    img{
+        height:100px;
+        width: 100px;
+    }
+
     .icons{
         height:100px;
         width: 100px;
@@ -139,6 +144,9 @@ body {
         display:inline-block;
         margin-left: 10%;
 
+    }
+    #computerChoice{
+        font-size: 20px
     }
     #gameSpace{
         margin-top: 10px;
