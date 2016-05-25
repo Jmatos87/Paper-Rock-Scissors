@@ -94,12 +94,16 @@ function app() {
 		componentWillMount: function (){
 			var self = this
 			var clear = setInterval(function(){
-				self.setState({
-					time:self.state.time -1
-				})
+				
 
-				if(self.state.time===0){
+				if(self.state.time <= 0){
 					clearInterval(clear)
+				}
+
+				else {
+					self.setState({
+						time:self.state.time -1
+					})
 				}
 				
 			},1000)
@@ -180,7 +184,22 @@ function app() {
 			}
 		},
 
+		startOver:function(){
+
+			this.setState({
+				computerChoice: '',
+				wins: 0,
+				losses: 0,
+				draws: 0,
+				time: 0
+			})
+		},
+
+
 		render:function(){
+
+			var controlStyle = {display:'block'}
+			if (this.state.time < 1) controlStyle.display = 'none'
 		  return(
 
 		    <div id='gameSpace'>
@@ -192,7 +211,7 @@ function app() {
 		      <h3 className='results' >Loss:{this.state.losses}</h3>
 		      <h3 className='results' >Draw:{this.state.draws}</h3>
 
-		      <div>
+		      <div style={controlStyle}>
 		        
 		        <h3 id='instruction'>Click wisely:</h3>
 
@@ -214,6 +233,10 @@ function app() {
 		      <div id='computerChoice'>
 		      		{this.state.computerChoice}
 		      </div>
+
+		      <button onClick={this.startOver}> Reset </button>
+
+
 
 
 		    </div>
