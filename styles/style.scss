@@ -130,6 +130,7 @@ body {
  body{
 
     background-color: palegoldenrod;
+
     
     img{
         height:100px;
@@ -176,7 +177,7 @@ body {
     }
     #reset{
         display: block;
-        margin: auto;
+        margin: 10px auto;
     }
     #startButton{
         margin-left: 48%
@@ -193,6 +194,10 @@ body {
     }
     #title{
         text-align: center;
+    }
+    #warning{
+        color:red;
+        margin: 20px 0
     }
     
     

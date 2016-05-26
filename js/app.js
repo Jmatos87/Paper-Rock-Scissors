@@ -201,12 +201,32 @@ function app() {
 		render:function(){
 
 			var controlStyle = {display:'block'}
-			if (this.state.time < 1) controlStyle.display = 'none'
+			var warning = {
+			  display:'none',
+			}
+			if (this.state.time < 11) warning.display = 'block'
+			if (this.state.time < 1){
+				controlStyle.display = 'none'
+				if(this.state.wins> this.state.losses){
+					alert('Congratulations, you win!!!')
+				}
+				else if (this.state.wins === this.state.losses){
+					alert("It's a draw!")
+				}
+				else {
+					alert('You lost, better luck next time.')
+				}
+			} 
+
 		  return(
 
 		    <div id='gameSpace'>
 		      <div id='timer'>
 		        <h3 >Seconds remaining: {this.state.time}</h3>
+		      </div>
+		      
+		      <div style={warning}>
+		        <h3 id='warning'>Less than 10 seconds remaining!</h3>
 		      </div>
 
 		      <div className='score'>
