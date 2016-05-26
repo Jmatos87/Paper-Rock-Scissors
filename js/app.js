@@ -48,11 +48,25 @@ function app() {
 	    },
 
 	    onClick: function() {
-	      this.setState({ showResults: true });
+	      
 	      var minute = document.querySelector('#minute')
 		  var second = document.querySelector('#second')
+		  if(minute.value && second.value){
+		  	var time = (parseInt(minute.value)*60) + parseInt(second.value)
+		  	this.setState({ showResults: true });
+		  }
+		  else if(minute.value){
+		  	var time = parseInt(minute.value)*60
+		  	this.setState({ showResults: true });
+		  }
+		  else if(second.value){
+		  	var time = parseInt(second.value)
+		  	this.setState({ showResults: true });
+		  }
+		  else
+		  	{alert('Please input a time')}
 
-		  var time = (minute.value*60) + parseInt(second.value)
+		  
   		  this.timer = time
 	    },
 
@@ -203,13 +217,19 @@ function app() {
 		  return(
 
 		    <div id='gameSpace'>
-		      <div>
-		        <h3>{this.state.time}</h3>
+		      <div id='timer'>
+		        <h3 >Seconds remaining: {this.state.time}</h3>
 		      </div>
 
-		      <h3 className='results' >Win:{this.state.wins}</h3>
-		      <h3 className='results' >Loss:{this.state.losses}</h3>
-		      <h3 className='results' >Draw:{this.state.draws}</h3>
+		      <div className='score'>
+		        <h3 >Win:{this.state.wins}</h3>
+		      </div>
+		      <div className='score'>
+		        <h3 >Loss:{this.state.losses}</h3>
+		      </div>
+		      <div className='score'>
+		        <h3 >Draw:{this.state.draws}</h3>
+		      </div>
 
 		      <div style={controlStyle}>
 		        
@@ -226,15 +246,16 @@ function app() {
 		        <button className='icons' value='paper' data-victim='rock' onClick={this._challenge}>
 		          <img value='paper' src='http://www.veryicon.com/icon/ico/System/Icons8%20Metro%20Style/Rock%20Paper%20Scissors%20Paper.ico' />
 		        </button>
-		      </div>
+		   
 
-		      <h3> VS </h3>
+		        <h3> VS </h3>
 
-		      <div id='computerChoice'>
+		        <div id='computerChoice'>
 		      		{this.state.computerChoice}
-		      </div>
+		        </div>
+		    </div>
 
-		      <button onClick={this.startOver}> Reset </button>
+		      <button id='reset' onClick={this.startOver}> Reset </button>
 
 
 

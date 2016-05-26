@@ -128,25 +128,43 @@ body {
  */
 
  body{
+
+    background-color: palegoldenrod;
     
     img{
         height:100px;
         width: 100px;
     }
+    h3{
+        margin: 0;
+
+    }
+    input{
+        margin: 10px 0;
+    }
 
     .icons{
-        height:100px;
-        width: 100px;
+        height:150px;
+        width: 150px;
         display:inline-block;
         margin-left: 10%;
+        background-color: lightgray;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
-    .results{
-        display:inline-block;
-        margin-left: 10%;
-
+    .icons:hover{
+        background-color: palegoldenrod
+    }
+    .score{
+        background-color: lightblue;
+        border:2px solid black;
+        display: inline-block;
+        padding: 10px;
     }
     #computerChoice{
-        font-size: 20px
+        font-size: 20px;
+        background-color: red;
+        margin: 0 40%
     }
     #gameSpace{
         margin-top: 10px;
@@ -156,11 +174,22 @@ body {
         display: inline-block;
         vertical-align: 35px;
     }
+    #reset{
+        display: block;
+        margin: auto;
+    }
     #startButton{
         margin-left: 48%
     }
     #timeBar{
         text-align: center;
+    }
+    #timer{
+        background-color: limegreen;
+        display: inline-block;
+        padding:10px;
+        border: 2px solid black
+
     }
     #title{
         text-align: center;
