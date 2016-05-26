@@ -176,18 +176,6 @@ function app() {
 			})
 		},
 
-		// countdown:function(){
-		// 	console.log(this)
-		// 	var self = this
-		// 	var time=self.props.time
-		// 	if(time>= 0){
-		// 		 self.props.time -= 1
-		// 		setTimeout(self.countdown,1000)
-		// 	}
-		// 	else {
-		// 		alert('time is up')
-		// 	}
-		// },
 		getInitialState: function() {
 			return {
 				computerChoice: '',
