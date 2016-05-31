@@ -133,28 +133,36 @@ body {
 
     
     img{
-        height:100px;
-        width: 100px;
+        height: 100px;
+        width: 100%;
+        padding: 10px;
     }
     h3{
         margin: 0;
-
+        text-shadow: -2px 3px 2px darkgrey;
     }
     input{
         margin: 10px 0;
     }
 
     .icons{
-        height:150px;
+
         width: 150px;
         display:inline-block;
         margin-left: 10%;
-        background-color: lightgray;
+        background-color: palegoldenrod;
         margin-top: 20px;
         margin-bottom: 20px;
+        border: solid firebrick;
+        padding: 5px;
+        box-shadow:  -1px 1px darkgrey,
+         -2px 2px darkgrey,
+         -3px 3px darkgrey,
+         -4px 4px darkgrey,
+         -5px 5px darkgrey;
     }
     .icons:hover{
-        background-color: palegoldenrod
+        background-color: powderblue
     }
     .score{
         background-color: lightblue;
@@ -164,8 +172,8 @@ body {
     }
     #computerChoice{
         font-size: 20px;
-        background-color: firebrick;
-        margin: 0 40%
+        margin: 0 40%;
+
     }
     #gameSpace{
         margin-top: 10px;
@@ -174,6 +182,9 @@ body {
     #instruction{
         display: inline-block;
         vertical-align: 35px;
+        border: solid firebrick;
+        background-color: powderblue;
+        padding: 13px;
     }
     #reset{
         display: block;
@@ -202,37 +213,70 @@ body {
         margin: 10px 15%;
         padding: 10px;
         background-color: powderblue;
+        font-family: bello-pro, serif;
+        font-weight: 400;
+        color: firebrick;
+        text-shadow: -3px 2px 1px orange,-10px 5px 2px darkgrey
+
     }
     #warning{
         color:firebrick;
-        margin: 20px 0
+        margin: 20px 0;
     }
     
 }
 
+@media screen and (max-width: 1000px) {
+  body{
+    #timer{
+        display: block;
+        margin: 10px 15%;
+    }
+    #instruction{
+        display: block;
+        margin: 10px 35%;
+    }
+    .icons{
+        margin-left: 6%
+    }
+  } 
+}
+
 @media screen and (max-width: 740px) {
-   *{
+  *{
     display:block;
 
-        #title{
-            font-size: 30px
-        }
-        #timeBar h3{
-            font-size: 15px
-        }
-        #minute{
+    body{
+      h3{
+            font-size: 15px;
+      }
+
+      #title{
+            font-size: 30px;
+      }
+      #timeBar h3{
+            font-size: 15px;
+      }
+      #minute{
             height: 25px;
             width: 120px;
             margin: 10px auto;
-        }
-        #second{
+      }
+      #second{
             height: 25px;
             width: 120px;
             margin: 10px auto;
+      }
+      #instruction{
+            margin: 10px 34%;
         }
-        
-   }
+       
+      .icons{
+           width: 25%;
+           margin: 10px
 
-
+      }
+    }    
+  }
 }
 
