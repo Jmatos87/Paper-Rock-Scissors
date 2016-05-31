@@ -171,9 +171,14 @@ body {
         padding: 10px;
     }
     #computerChoice{
-        font-size: 20px;
-        margin: 0 40%;
-
+        font-size: 15px;
+        margin: 0 43%;
+        img{
+          width: 100%;
+          background: red;
+          border: solid black;
+          padding: 10px;
+        }
     }
     #gameSpace{
         margin-top: 10px;
@@ -239,6 +244,9 @@ body {
     .icons{
         margin-left: 6%
     }
+    #computerChoice{
+        margin: 10px 40%;
+    }
   } 
 }
 
@@ -249,6 +257,9 @@ body {
     body{
       h3{
             font-size: 15px;
+      }
+      #computerChoice{
+            margin: 10px 37%;
       }
 
       #title{
