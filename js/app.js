@@ -86,7 +86,7 @@ function app() {
 		render:function () {
 		  return(
 			<div>
-			  <div id='title'>
+			  <div>
 			    <h1 id='title'>Paper Rock Scissors</h1>
 			  </div>
 

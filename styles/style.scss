@@ -158,13 +158,13 @@ body {
     }
     .score{
         background-color: lightblue;
-        border:2px solid black;
+        border:2px solid firebrick;
         display: inline-block;
         padding: 10px;
     }
     #computerChoice{
         font-size: 20px;
-        background-color: red;
+        background-color: firebrick;
         margin: 0 40%
     }
     #gameSpace{
@@ -184,23 +184,55 @@ body {
     }
     #timeBar{
         text-align: center;
+        border: 3px solid firebrick;
+        margin: 10px 15%;
+        padding: 10px;
+        background-color: powderblue;
     }
     #timer{
         background-color: limegreen;
         display: inline-block;
         padding:10px;
-        border: 2px solid black
+        border: 2px solid firebrick
 
     }
     #title{
         text-align: center;
+        border: 3px solid firebrick;
+        margin: 10px 15%;
+        padding: 10px;
+        background-color: powderblue;
     }
     #warning{
-        color:red;
+        color:firebrick;
         margin: 20px 0
     }
     
-    
+}
 
- }
+@media screen and (max-width: 740px) {
+   *{
+    display:block;
+
+        #title{
+            font-size: 30px
+        }
+        #timeBar h3{
+            font-size: 15px
+        }
+        #minute{
+            height: 25px;
+            width: 120px;
+            margin: 10px auto;
+        }
+        #second{
+            height: 25px;
+            width: 120px;
+            margin: 10px auto;
+        }
+        
+   }
+
+
+}
 
